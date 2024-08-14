@@ -1,0 +1,111 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Slightly darker overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative; /* For positioning the content */
+  background: #ffffff; /* White background for the modal */
+  border-radius: 12px; /* Slightly rounded corners */
+  width: 90%;
+  max-width: 500px; /* Slightly larger width */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  padding: 2.5rem; /* Increased padding for a more spacious feel */
+  animation: slideIn 0.5s ease-out; /* Slide in animation */
+  text-align: center; /* Center text and content */
+  overflow: hidden; /* Keep content within modal */
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  flex-direction: column; /* Stack header elements vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  margin-bottom: 1.5rem; /* Increased margin */
+  color: #333; /* Dark color for header text */
+}
+
+/* Avatar */
+.avatar-container {
+  margin-bottom: 1rem; /* Space below the logo */
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 70px; /* Slightly larger size */
+  height: 70px;
+  object-fit: cover;
+  border: 3px solid #87ceeb; /* Sky blue border */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.15);
+  filter: brightness(1.1);
+}
+
+/* Close Button */
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 2rem; /* Larger size for better visibility */
+  color: #333; /* Dark color for button */
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.2);
+  color: #87ceeb; /* Sky blue color on hover */
+}
+
+/* Body */
+.modal-body {
+  margin-bottom: 1.5rem; /* Increased margin */
+  color: #333; /* Dark color for body text */
+  font-size: 1.2rem; /* Slightly larger font size */
+  line-height: 1.6;
+}
+
+/* Footer */
+.modal-footer {
+  text-align: center; /* Center footer content */
+}
+
+/* Button */
+.mat-raised-button {
+  margin-top: 0.5rem;
+  background-color: #87ceeb; /* Sky blue for button */
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mat-raised-button:hover {
+  background-color: #6abedc; /* Slightly darker shade for hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,147 @@
+/* Custom Navbar Styling */
+.custom-navbar {
+    background: linear-gradient(135deg, #1e90ff, #d3d3d3, #add8e6);
+    background-size: 300% 300%;
+    animation: navbarGradientAnimation 20s ease infinite;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Gradient Animation */
+  @keyframes navbarGradientAnimation {
+    0% { background-position: 0% 0%; }
+    33% { background-position: 100% 0%; }
+    66% { background-position: 100% 100%; }
+    100% { background-position: 0% 100%; }
+  }
+  
+  /* Avatar Container */
+  .avatar-container {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+  }
+  
+  /* Avatar Style */
+  .avatar {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid #fff; /* Border around the avatar */
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* Loader Style */
+  .avatar-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid #1e90ff; /* Sky blue color */
+    transform: rotate(0deg);
+    animation: spin 4s linear infinite; /* Slow animation */
+    transition: border-top-color 0.5s ease, animation-duration 0.5s ease; /* Smooth transition */
+    z-index: 0; /* Place the loader behind the avatar */
+  }
+  
+  /* Keyframes for Slow Spin Animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Hover Effect on Avatar */
+  .avatar-container:hover .avatar-loader {
+    border-top-color: #ffdd57; /* Light yellow color on hover */
+    animation: spin-fast 1s linear infinite; /* Faster animation */
+  }
+  
+  /* Keyframes for Fast Spin Animation */
+  @keyframes spin-fast {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Logo Hover Effect */
+  .avatar:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  
+  /* Navbar Brand Text */
+  .navbar-brand span {
+    color: #fff;
+    font-weight: 500;
+    display: none; /* Hide on small screens */
+  }
+  
+  /* Navbar Links */
+  .navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #1e90ff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #1e90ff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  /* Navbar Toggler Icon */
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .navbar-brand span {
+      display: inline-block;
+      color: #fff;
+      font-weight: 500;
+    }
+  
+    .navbar-brand {
+      justify-content: left;
+    }
+  
+    .navbar-nav .nav-link {
+      padding: 0.75rem 1.5rem;
+      text-align: center;
+    }
+  
+    .navbar-brand {
+      margin-left: 0;
+    }
+  
+    .navbar-brand img {
+      margin-right: auto;
+    }
+  
+    .avatar-container {
+      display: flex;
+      align-items: center;
+    }
+  
+    .navbar-toggler {
+      margin-left: auto;
+    }
+  }
+  

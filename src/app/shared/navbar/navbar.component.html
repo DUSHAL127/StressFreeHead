@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+  <div class="container-fluid">
+    <!-- Circular Avatar Logo -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <div class="avatar-container">
+        <div class="avatar-loader"></div>
+        <img src="assets/logo.jpeg" alt="Stress Free Head" class="avatar">
+      </div>
+      <span class="ms-2">Stress Free Head</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateWithCheck('/upgrade')">Subscribe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateWithCheck('/product')">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateWithCheck('/profile')">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/help" routerLinkActive="active">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="navigateWithCheck('/contactus')">Contact</a>
+        </li>
+        <!-- Conditionally render login/logout based on authentication state -->
+        <li class="nav-item" *ngIf="!isLoggedIn">
+          <a class="nav-link" (click)="toggleLoginStatus()">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal Component -->
+<app-modal *ngIf="showModal" [title]="'Please Login'" [message]="'You need to be logged in to access this page.'" 
+           (close)="closeModal()" (confirm)="confirmModal()"></app-modal>
