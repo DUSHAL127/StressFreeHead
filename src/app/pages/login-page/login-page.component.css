@@ -1,51 +1,100 @@
+/* Animated Background */
 .login-wrapper {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #eef2f3, #8e9eab);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e90ff, #d3d3d3, #add8e6); /* Initial gradient colors */
+  background-size: 300% 300%; /* Adjust for smooth transition */
+  animation: gradientAnimation 20s ease infinite; /* Longer duration for smoother effect */
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 0%; }
+  33% { background-position: 100% 0%; }
+  66% { background-position: 100% 100%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* Centering the Form Container */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-    color: #333;
+  background: rgba(255, 255, 255, 0.9); /* Slightly more opaque for better readability */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%; /* Full width up to max-width */
+  margin: auto;
+  text-align: center; /* Center text and form elements */
 }
 
-.login-container h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    color: #5c6bc0;
+/* Circular Logo Avatar */
+/* .logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.login-message {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    color: #607d8b;
+.logo-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+} */
+.logo-avatar {
+  border-radius: 50%;
+  width: 60px; /* Adjusted size */
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid #87ceeb; /* Sky blue border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.logo-avatar:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Form Elements */
 .full-width {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.remember-me {
-    color: #607d8b;
-    margin-bottom: 1rem;
+  width: 100%;
 }
 
 .login-button {
-    background-color: #5c6bc0;
-    color: #fff;
-    transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
-.login-button:hover {
-    background-color: #3f51b5;
+/* Remember Me Checkbox */
+.remember-me {
+  display: block;
+  margin-top: 1rem;
+}
+
+/* Adjustments for the Login Message */
+.login-message {
+  margin-bottom: 1rem;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.forgot-password-link,
+.create-account-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover,
+.create-account-link:hover {
+  text-decoration: underline;
 }

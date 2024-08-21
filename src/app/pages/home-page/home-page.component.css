@@ -1,0 +1,85 @@
+/* Carousel Styling */
+.carousel-inner img {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover; /* Ensure image covers the card area */
+}
+
+/* Hover Effect */
+.custom-card:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Card Body */
+.card-body {
+  background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+  color: #1e90ff; /* Font color matching the theme */
+}
+
+/* Card Title */
+.card-title {
+  font-weight: bold;
+  color: #007bff; /* Blue color for titles */
+  margin-bottom: 1rem;
+}
+
+/* Card Text */
+.card-text {
+  color: #333; /* Darker text color for readability */
+}
+
+/* Parallax Container */
+.parallax-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Ensure the parallax image covers the entire container */
+.parallax-image {
+  background: url('../../../assets/parallax-image.jpeg') no-repeat center center;
+  background-size: cover;
+  height: 400px; /* Adjust based on design */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Ensure the overlay covers the entire image */
+.parallax-content {
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker background to cover the image */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white; /* Text color */
+  position: absolute; /* Absolute positioning to ensure full coverage */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust positioning */
+  max-width: 90%; /* Ensure content does not overflow on small screens */
+}
+
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .carousel-inner img {
+    height: 50vh;
+  }
+}
+

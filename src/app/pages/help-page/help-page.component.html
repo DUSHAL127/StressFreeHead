@@ -1,1 +1,19 @@
-<p>help-page works!</p>
+<div class="help-wrapper">
+  <div class="help-container">
+    <!-- Logo Section -->
+    <div class="logo-container">
+      <img src="assets/logo.jpeg" alt="Company Logo" class="logo-avatar" (click)="navigateHome()">
+    </div>
+
+    <h2>Help & FAQs</h2>
+    <p class="help-message">Find answers to some of the most common questions below. If you need further assistance, feel free to contact us.</p>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let faq of faqs">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ faq.question }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>{{ faq.answer }}</div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

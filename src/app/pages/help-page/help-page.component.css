@@ -1,0 +1,75 @@
+.help-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #0072ff, #b0b0b0, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
+  .help-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  /* .logo-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  } */
+  .logo-avatar {
+    border-radius: 50%;
+    width: 60px; /* Adjusted size */
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid #87ceeb; /* Sky blue border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .logo-avatar:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  
+  
+  h2 {
+    text-align: center;
+    color: #004d99;
+  }
+  
+  .help-message {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333333;
+  }
+  
+  mat-accordion {
+    width: 100%;
+  }
+  
+  /* Gradient animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

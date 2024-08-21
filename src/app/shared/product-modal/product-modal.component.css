@@ -1,0 +1,59 @@
+/* Share Modal Styles */
+.modal-content {
+    border-radius: 15px;
+    padding: 2rem;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .modal-body {
+    text-align: center;
+  }
+  
+  .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+  }
+  
+  .btn-primary {
+    background-color: #4267B2; /* Facebook blue */
+    border-color: #4267B2;
+  }
+  
+  .btn-primary:hover {
+    background-color: #365899; /* Darker Facebook blue */
+  }
+  
+  .btn-info {
+    background-color: #1DA1F2; /* Twitter blue */
+    border-color: #1DA1F2;
+  }
+  
+  .btn-info:hover {
+    background-color: #1a91da; /* Darker Twitter blue */
+  }
+  
+  .btn-danger {
+    background-color: #D44638; /* Email red */
+    border-color: #D44638;
+  }
+  
+  .btn-danger:hover {
+    background-color: #b53a2e; /* Darker Email red */
+  }
+  
+  .fab, .fas {
+    margin-right: 0.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .modal-dialog {
+      max-width: 100%;
+    }
+  }
+  

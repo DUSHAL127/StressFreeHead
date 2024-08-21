@@ -1,32 +1,50 @@
 <div class="contact-wrapper">
-    <div class="contact-container">
-      <h2>Contact Us</h2>
-      <p class="contact-message">We’re here to help. Feel free to reach out with any questions or concerns.</p>
-      <form>
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Full Name</mat-label>
-          <input matInput type="text" placeholder="Enter your full name">
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Email address</mat-label>
-          <input matInput type="email" placeholder="Enter your email">
-        </mat-form-field>
-  
-        <!-- <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Subject</mat-label>
-          <input matInput type="text" placeholder="Subject">
-        </mat-form-field> -->
-  
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Message</mat-label>
-          <textarea matInput rows="4" placeholder="Type your message here"></textarea>
-        </mat-form-field>
-  
-        <button mat-raised-button color="primary" class="full-width contact-button">
-          Send Message
-        </button>
-      </form>
+  <div class="contact-container">
+    <!-- Logo Section -->
+    <div class="logo-container">
+      <img src="assets/logo.jpeg" alt="Company Logo" class="logo-avatar" (click)="navigateHome()">
     </div>
+
+    <h2>Contact Us</h2>
+    <p class="contact-message">We’re here to help. Feel free to reach out with any questions or concerns.</p>
+    <form [formGroup]="contactForm" (ngSubmit)="sendMessage()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullName" placeholder="Enter your full name">
+        <mat-error *ngIf="contactForm.get('fullName')?.hasError('required')">
+          Full name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email address</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="Enter your email">
+        <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" rows="4" placeholder="Type your message here"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+          Message is required
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="full-width contact-button" type="submit" [disabled]="contactForm.invalid">
+        Send Message
+      </button>
+    </form>
   </div>
-  
+</div>
+
+<!-- Modal Component -->
+<app-modal *ngIf="showModal"
+           [title]="modalTitle"
+           [message]="modalMessage"
+           (close)="onModalClose()">
+</app-modal>

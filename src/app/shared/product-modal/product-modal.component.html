@@ -1,1 +1,30 @@
-<p>product-modal works!</p>
+<!-- Product Details Modal (already provided) -->
+<!-- Share Modal -->
+<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shareModalLabel">Share This Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Share {{ selectedProduct?.title }} with your friends:</p>
+          <div class="d-flex justify-content-center">
+            <a href="https://facebook.com/sharer/sharer.php?u={{ shareUrl }}" class="btn btn-primary mx-2" target="_blank">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://twitter.com/intent/tweet?url={{ shareUrl }}&text={{ selectedProduct?.title }}" class="btn btn-info mx-2" target="_blank">
+              <i class="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="mailto:?subject=Check out this product&body={{ selectedProduct?.title }}: {{ shareUrl }}" class="btn btn-danger mx-2">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

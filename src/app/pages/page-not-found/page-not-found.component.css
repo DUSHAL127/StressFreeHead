@@ -1,46 +1,71 @@
+/* Animated Background */
 .not-found-wrapper {
+    position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, #eef2f3, #8e9eab);
+    background: linear-gradient(135deg, #1e90ff, #d3d3d3, #add8e6); /* Gradient colors */
+    background-size: 300% 300%; /* Smooth gradient transition */
+    animation: gradientAnimation 20s ease infinite; /* Longer duration for smooth effect */
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    33% { background-position: 100% 0%; }
+    66% { background-position: 100% 100%; }
+    100% { background-position: 0% 100%; }
+}
+
+/* Centering the Content */
+.not-found-wrapper {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 2rem; /* Padding for space around container */
 }
 
+/* Not Found Container Styling */
 .not-found-container {
-    background-color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; /* Slightly smaller border radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow for a lighter effect */
+    max-width: 400px; /* Adjusted max-width for a smaller card */
     width: 100%;
-    max-width: 400px;
-    text-align: center;
-    color: #333;
+    text-align: center; /* Center align text within the container */
 }
 
+/* Heading Styles */
 .not-found-container h1 {
-    font-size: 6rem;
-    margin: 0;
-    color: #5c6bc0;
+    font-size: 6rem; /* Large size for the 404 error code */
+    margin-bottom: 0.5rem;
 }
 
 .not-found-container h2 {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Slightly smaller than the main heading */
     margin-bottom: 1rem;
-    color: #607d8b;
 }
 
+/* Message Style */
 .not-found-message {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    color: #607d8b;
+    margin-bottom: 1.5rem; /* Space between message and button */
 }
 
+/* Button Style */
 .home-button {
-    background-color: #5c6bc0;
-    color: #fff;
-    transition: background-color 0.3s ease;
+    margin-top: 1rem; /* Space before the button */
 }
 
-.home-button:hover {
-    background-color: #3f51b5;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .not-found-container {
+        padding: 1rem; /* Reduced padding on smaller screens */
+    }
+
+    .not-found-container h1 {
+        font-size: 4rem; /* Adjusted size for smaller screens */
+    }
+
+    .not-found-container h2 {
+        font-size: 1.5rem; /* Adjusted size for smaller screens */
+    }
 }

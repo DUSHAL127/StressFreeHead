@@ -1,1 +1,93 @@
-<p>upgrade-page works!</p>
+<div class="payment-wrapper">
+  <div class="payment-container">
+    <!-- Logo Section -->
+    <div class="logo-container">
+      <img src="assets/logo.jpeg" alt="Company Logo" class="logo-avatar" (click)="navigateHome()">
+    </div>
+
+    <!-- Plan Selection -->
+    <div class="plans-section">
+      <h2>Select a Plan</h2>
+      <div class="plan-options">
+        <div
+          *ngFor="let plan of plans"
+          class="plan-card"
+          [class.selected]="selectedPlan === plan"
+          (click)="selectPlan(plan)"
+        >
+          <div class="plan-card-header">
+            <h3>{{ plan.name }}</h3>
+            <p class="plan-duration">{{ plan.duration }}</p>
+          </div>
+          <div class="plan-card-body">
+            <p>{{ plan.details }}</p>
+            <p class="plan-price">$ {{ plan.price | number:'1.2-2' }}</p>
+          </div>
+          <div class="plan-card-footer">
+            <button mat-raised-button color="primary">
+              {{ plan.price > 0 ? 'Select Plan' : 'Select Free Plan' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Form -->
+    <div class="payment-section" *ngIf="selectedPlan && selectedPlan.price > 0">
+      <h2>Payment Details</h2>
+      <form (ngSubmit)="processPayment()" #paymentForm="ngForm">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Name on Card</mat-label>
+          <input matInput [(ngModel)]="paymentInfo.cardName" name="cardName" required #cardName="ngModel">
+          <mat-error *ngIf="cardName.invalid && (cardName.dirty || cardName.touched)">
+            Name on Card is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Card Number</mat-label>
+          <input matInput [(ngModel)]="paymentInfo.cardNumber" name="cardNumber" required #cardNumber="ngModel">
+          <mat-error *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)">
+            Card Number is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Expiry Date</mat-label>
+          <input matInput [(ngModel)]="paymentInfo.expiryDate" name="expiryDate" required #expiryDate="ngModel">
+          <mat-error *ngIf="expiryDate.invalid && (expiryDate.dirty || expiryDate.touched)">
+            Expiry Date is required.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>CVV</mat-label>
+          <input matInput [(ngModel)]="paymentInfo.cvv" name="cvv" required #cvv="ngModel">
+          <mat-error *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)">
+            CVV is required.
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="full-width payment-button" type="submit" [disabled]="paymentForm.invalid">
+          Pay ${{ selectedPlan.price | number:'1.2-2' }}
+        </button>
+      </form>
+    </div>
+
+    <div class="payment-section" *ngIf="selectedPlan && selectedPlan.price === 0">
+      <h2>Free Plan Selected</h2>
+      <p>You have selected the free plan. No payment is required.</p>
+      <button mat-raised-button color="primary" class="full-width payment-button" (click)="processPayment()">
+        Confirm Free Plan
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Component -->
+  <app-modal *ngIf="isModalOpen" 
+             [title]="modalTitle" 
+             [message]="modalMessage" 
+             (close)="closeModal()" 
+             (confirmAction)="handleConfirm()">
+  </app-modal>
+</div>

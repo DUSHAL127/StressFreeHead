@@ -1,0 +1,177 @@
+/* General Styles */
+.payment-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e90ff, #d3d3d3, #add8e6); /* Gradient colors */
+  background-size: 300% 300%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 0%; }
+  33% { background-position: 100% 0%; }
+  66% { background-position: 100% 100%; }
+  100% { background-position: 0% 100%; }
+}
+
+.payment-container {
+  max-width: 100%;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Plans Section */
+.plans-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plan-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.plan-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #1e90ff, #d3d3d3, #add8e6); /* Gradient background */
+  background-size: 300% 300%;
+  animation: cardGradientAnimation 20s ease infinite;
+}
+
+@keyframes cardGradientAnimation {
+  0% { background-position: 0% 0%; }
+  33% { background-position: 100% 0%; }
+  66% { background-position: 100% 100%; }
+  100% { background-position: 0% 100%; }
+}
+
+.plan-card.selected {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card-header {
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+  color: #1e90ff; /* Text color matching theme */
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #1e90ff; /* Accent border */
+}
+
+.plan-duration {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.plan-card-body {
+  padding: 1rem;
+  text-align: center;
+  color: #333; /* Dark text color for readability */
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+.plan-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: #1e90ff; /* Matching theme color */
+}
+
+.plan-card-footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Payment Section */
+.payment-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.payment-button {
+  margin-top: 1rem;
+  background: #1e90ff; /* Theme color for button */
+  color: #fff; /* White text for contrast */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.payment-button:hover {
+  background: #add8e6; /* Light blue for hover effect */
+}
+
+/* Form Fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input.matInput {
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+input.matInput:focus {
+  border-color: #1e90ff; /* Focus border color matching theme */
+}
+
+/* Payment Page Styles */
+.payment-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.payment-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Circular Logo Avatar */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo-avatar {
+  border-radius: 50%;
+  width: 60px; /* Adjusted size */
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid #87ceeb; /* Sky blue border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-avatar:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+

@@ -1,47 +1,79 @@
+/* Animated Background */
 .contact-wrapper {
+    position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, #eef2f3, #8e9eab);
-    display: flex;
-    justify-content: center;
+    background: linear-gradient(135deg, #1e90ff, #d3d3d3, #add8e6); /* Gradient colors */
+    background-size: 300% 300%; /* Smooth gradient transition */
+    animation: gradientAnimation 20s ease infinite; /* Longer duration for smooth effect */
+    display: flex; /* Center the content */
     align-items: center;
-    padding: 2rem;
+    justify-content: center;
+    padding: 2rem; /* Padding for space around container */
 }
 
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    33% { background-position: 100% 0%; }
+    66% { background-position: 100% 100%; }
+    100% { background-position: 0% 100%; }
+}
+
+/* Contact Container Styling */
 .contact-container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+    padding: 1.5rem; /* Reduced padding for a smaller card */
+    border-radius: 8px; /* Slightly smaller border radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow for a lighter effect */
+    max-width: 500px; /* Adjusted max-width for a smaller card */
     width: 100%;
-    max-width: 600px;
-    color: #333;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    text-align: center; /* Center align text within the container */
 }
 
-.contact-container h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    color: #5c6bc0;
+/* Logo Container Styling */
+.logo-container {
+    margin-bottom: 1rem; /* Space below the logo */
 }
 
-.contact-message {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    color: #607d8b;
-}
+.logo-avatar {
+    border-radius: 50%;
+    width: 60px; /* Adjusted size */
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid #87ceeb; /* Sky blue border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .logo-avatar:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  
 
+/* Form Elements */
 .full-width {
     width: 100%;
-    margin-bottom: 1rem;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 0.75rem; /* Reduced space between form fields */
 }
 
 .contact-button {
-    background-color: #5c6bc0;
-    color: #fff;
-    transition: background-color 0.3s ease;
+    margin-top: 1rem; /* Adjusted space before the button */
 }
 
-.contact-button:hover {
-    background-color: #3f51b5;
+/* Adjustments for the Contact Message */
+.contact-message {
+    margin-bottom: 1rem; /* Space below the contact message */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 1rem; /* Reduced padding on smaller screens */
+    }
 }
