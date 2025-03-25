@@ -1,0 +1,87 @@
+/* Animated Background */
+.register-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e90ff, #d3d3d3, #add8e6); /* Smooth gradient with theme colors */
+  background-size: 300% 300%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 0%; }
+  33% { background-position: 100% 0%; }
+  66% { background-position: 100% 100%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* Centering the Form Container */
+.register-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Register Container */
+.register-container {
+  background: rgba(245, 245, 245, 0.9); /* Light gray background with a bit more opacity */
+  padding: 2rem;
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Circular Logo Avatar */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem; /* Slightly increased margin */
+}
+
+.logo-avatar {
+  border-radius: 50%;
+  width: 60px; /* Adjusted size */
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid #87ceeb; /* Sky blue border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-avatar:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+
+/* Form Elements */
+.full-width {
+  width: 100%;
+}
+
+.register-button {
+  margin-top: 1.5rem; /* Increased spacing above the button */
+  background-color: #007bff; /* Button color matching the theme */
+  color: #fff;
+}
+
+.register-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Login Redirect */
+.login-redirect {
+  margin-top: 1.5rem; /* Increased margin for spacing */
+  text-align: center;
+}
+
+.login-link {
+  color: #1e90ff; /* Theme color for the link */
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Darker shade on hover */
+}

@@ -1,0 +1,11 @@
+<div class="logo-container">
+  <img src="assets/logo.jpeg" alt="Company Logo" class="logo-avatar" (click)="navigateToHome()">
+</div>
+
+<div class="product-container">
+  <div class="product-card" *ngFor="let product of products">
+    <img [src]="product.image" alt="{{ product.name }}" class="product-image">
+    <h3 class="product-title">{{ product.name }}</h3>
+    <p class="product-description">{{ product.description }}</p>
+  </div>
+</div>

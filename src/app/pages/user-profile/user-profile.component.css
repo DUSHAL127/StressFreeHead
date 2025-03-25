@@ -1,0 +1,86 @@
+/* Animated Background */
+.profile-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e90ff, #d3d3d3, #add8e6); /* Gradient colors */
+  background-size: 300% 300%; /* Smooth gradient transition */
+  animation: gradientAnimation 20s ease infinite; /* Longer duration for smooth effect */
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 0%; }
+  33% { background-position: 100% 0%; }
+  66% { background-position: 100% 100%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* Centering the Form Container */
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* Padding for space around container */
+}
+
+/* Profile Container Styling */
+.profile-container {
+  background: rgba(255, 255, 255, 0.9); /* Slightly opaque white background */
+  padding: 1.5rem; /* Reduced padding for smaller card */
+  border-radius: 8px; /* Slightly smaller border radius */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow for a lighter effect */
+  max-width: 400px; /* Reduced max-width for a smaller card */
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  text-align: center; /* Center align text within the container */
+}
+
+/* Avatar Section */
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; /* Space between avatar and form */
+}
+
+
+.avatar {
+  border-radius: 50%;
+  width: 60px; /* Adjusted size */
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid #87ceeb; /* Sky blue border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Form Elements */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 0.75rem; /* Reduced space between form fields */
+}
+
+.update-button {
+  margin-top: 1rem; /* Adjusted space before the button */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .avatar {
+      width: 60px; /* Smaller avatar for smaller screens */
+      height: 60px;
+  }
+
+  .profile-container {
+      padding: 1rem; /* Reduced padding on smaller screens */
+  }
+}

@@ -1,0 +1,23 @@
+/* about.component.css */
+.custom-navbar {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+    transition: background 0.3s ease; /* Smooth transition for background */
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: #ffffff; /* Change link color for better visibility */
+}
+
+.custom-navbar .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-list" viewBox="0 0 16 16"><path d="M0 3h16v1H0V3zm0 4h16v1H0V7zm0 4h16v1H0v-1z"/></svg>'); /* White icon for better visibility */
+}
+
+.custom-navbar.scrolled {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Change gradient on scroll */
+}
+
+@media (max-width: 767px) {
+    .custom-navbar {
+        background: linear-gradient(to right, #ff7e5f, #5c5650); /* Gradient for mobile view */
+    }
+}
